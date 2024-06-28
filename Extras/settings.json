@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "iostream": "cpp",
+        "queue": "c",
+        "stack": "c",
+        "stdio.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

@@ -92,7 +92,7 @@ bool cycle_detect_dfs(unordered_map<int,list<int>> adj,int vertex,unordered_map<
 {
     visited[vertex]=true;
     for(auto i:adj[vertex]){
-            if(!visited[i]){
+        if(!visited[i]){
                 if(cycle_detect_dfs(adj,i,visited,vertex)){
                 return true;
             }

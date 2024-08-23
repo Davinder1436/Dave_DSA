@@ -35,20 +35,15 @@ void printadj(){
 };
 
 void topological_sort(unordered_map<int,list<int>>adj,int vertex,unordered_map<int,bool>&visited,stack<int> &cont){
+
 visited[vertex]=true;
+
 for(auto i:adj[vertex]){
     if(!visited[i]){
         topological_sort(adj,i,visited,cont);
     }
-    else{
-        cont.push(i);
-        return;
-    }
 }
-while(!cont.empty()){
-    cout<<cont.top()<<" ";
-    cont.pop();
-}
+ cont.push(vertex); 
 
 }
 
@@ -64,8 +59,14 @@ b.addedge(3,4,true);
 b.addedge(4,5,true);
 b.addedge(5,8,true);
 b.addedge(1,4,true);
+//  b.printadj();
 stack<int> cont;
 // b.printadj();
 topological_sort(b.adj,1,visited_b,cont);
+while (!cont.empty()){
+    cout<<cont.top()<<" ";
+    cont.pop();
+}
     return 0;
+
 }
